@@ -1,6 +1,6 @@
 #!/bin/bash -ex
 
-GAMEDIR="$HOME/Steam/steamapps/common/Empyrion - Dedicated Server/DedicatedServer"
+GAMEDIR="$HOME/Steam/steamapps/common/Empyrion/DedicatedServer"
 
 cd "$HOME"
 [ "$BETA" ] && ./steamcmd.sh +login anonymous +app_update 530870 -beta experimental +quit
