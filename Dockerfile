@@ -28,7 +28,7 @@ VOLUME /home/steam/Steam
 RUN curl -sqL "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz" | tar xz
 
 RUN chmod 777 ./steamcmd.sh
-RUN chown -R steam:steam ./steamcmd.sh
+RUN chown -R steam:steam /home/steam ./steamcmd.sh
 
 RUN ./steamcmd.sh +login anonymous +quit
 
