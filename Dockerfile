@@ -9,7 +9,7 @@ RUN export DEBIAN_FRONTEND noninteractive && \
     apt-add-repository -y 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main' && \
     apt-get install -y wine-staging winetricks && \
     rm -rf /var/lib/apt/lists/* && \
-    ln -s '/home/user/Steam/steamapps/common/Empyrion - Dedicated Server/' /server && \
+    ln -s '/home/user/Steam/steamapps/common/Empyrion/' /server && \
     useradd -m user
 
 USER user
