@@ -8,6 +8,7 @@ WORKDIR /home/steam
 ADD entrypoint.sh .
 RUN mkdir empyrion
 RUN chown -R steam:steam .
+RUN chmod 700 ./entrypoint.sh
 VOLUME /home/steam/empyrion
 USER steam
 ENV HOME /home/steam
