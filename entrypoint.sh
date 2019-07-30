@@ -11,6 +11,6 @@ Xvfb :1 -screen 0 800x600x24 &
 export WINEDLLOVERRIDES="mscoree,mshtml="
 export DISPLAY=:1
 
-
+touch "$GAMEDIR"/Logs/current.log
 tail -F "$GAMEDIR"/Logs/current.log &
 /opt/wine-staging/bin/wine "$GAMEDIR"/EmpyrionDedicated.exe -batchmode -logFile "$GAMEDIR"/Logs/current.log "$@" &> $HOME/wine.log
