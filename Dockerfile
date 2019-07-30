@@ -1,19 +1,19 @@
 FROM arrol/uwine:latest
-
+RUN apt-get install -y sudo
 # Run commands as the steam user
 RUN adduser --disabled-login --shell /bin/bash --gecos "" steam
 # Add to sudo group
 RUN usermod -a -G sudo steam
+WORKDIR /home/steam
+ADD entrypoint.sh .
+RUN mkdir empyrion
+RUN chown -R steam:steam .
+VOLUME /home/steam/empyrion
 USER steam
 ENV HOME /home/steam
-WORKDIR /home/steam
 RUN curl -sqL "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz" | tar xz
-RUN chmod 777 ./steamcmd.sh
-#RUN ./steamcmd.sh +login anonymous +quit
+RUN ./steamcmd.sh +login anonymous +quit
 
 
-VOLUME /home/steam/empyrion
 EXPOSE 30000/udp
-ADD entrypoint.sh .
-RUN sudo chmod 777 ./entrypoint.sh
 ENTRYPOINT ["./entrypoint.sh"]
