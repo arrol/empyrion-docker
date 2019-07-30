@@ -7,7 +7,7 @@ GAMEDIR="$HOME/empyrion"
 mkdir -p "$GAMEDIR/Logs"
 
 rm -f /tmp/.X1-lock
-Xvfb :1 -screen 0 800x600x24 &
+Xvfb :1 -screen 0 800x600x24 -nolisten unix &
 export WINEDLLOVERRIDES="mscoree,mshtml="
 export DISPLAY=:1
 
