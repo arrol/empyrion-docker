@@ -9,11 +9,11 @@ ENV HOME /home/steam
 WORKDIR /home/steam
 RUN curl -sqL "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz" | tar xz
 RUN chmod 777 ./steamcmd.sh
-RUN ./steamcmd.sh +login anonymous +quit
+#RUN ./steamcmd.sh +login anonymous +quit
 
 
 VOLUME /home/steam/empyrion
 EXPOSE 30000/udp
 ADD entrypoint.sh .
-RUN chmod 777 ./entrypoint.sh
+RUN sudo chmod 777 ./entrypoint.sh
 ENTRYPOINT ["./entrypoint.sh"]
