@@ -16,5 +16,5 @@ RUN ./steamcmd.sh +login anonymous +quit
 
 
 EXPOSE 30000/udp
-ADD entrypoint.sh /
-ENTRYPOINT ["/entrypoint.sh"]
+ADD entrypoint.sh .
+ENTRYPOINT ["./entrypoint.sh"]
